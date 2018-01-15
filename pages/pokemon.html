@@ -1,0 +1,13 @@
+<div class="container">
+				<h2>{{pokemonNow.name}} - {{pokemonNow.pkdx_id}}</h2>
+				<img ng-src="{{pokemonNow.sprite}}">
+				<p>
+				  Attack: {{pokemonNow.attack}} <br>
+				  Defense: {{pokemonNow.defense}} <br>
+				  Speed: {{pokemonNow.speed}}<br>
+				  Type:<span ng-repeat="type in pokemonNow.types"><br> - {{type.name}} </span>  <br></span>
+				  Evolution: <span ng-repeat="evo in pokemonNow.evolutions"><br> - {{evo.to}} </span>
+				</p><br>
+				<h2><a href="#/pokedex">Back</a></h2>
+				<h1>{{pokemonNow}}</h1>
+			  </div>

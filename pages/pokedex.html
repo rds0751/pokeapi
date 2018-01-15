@@ -1,0 +1,30 @@
+<div class="container">
+		<div layout="column" flex id="content">
+			<md-content layout="column" flex class="md-padding">
+			  <md-list ng-hide="pokemonNow">
+				<div ng-controller="PageCtrl">
+			<div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input class="  search-query form-control" type="text" ng-model="search.name" placeholder="Search your Pokemon"/>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>  </br>
+				<md-list-item dir-paginate="pokemon in pokemonList | filter:search | startFrom:(currentPage-1)*entryLimit | itemsPerPage:entryLimit" ng-click="pokemonNow=true"><a ng-href="/#{{'pokemon'}}" ng-click="getPokemonDetail(pokemon.resource_uri)">{{pokemon.name}}</a>
+        </md-list-item>
+
+  		<dir-pagination-controls
+          max-size="5"
+          direction-links="true"
+          boundary-links="true" >
+        </dir-pagination-controls>
+		</div>
+
+			 </md-list>
+    </md-content>
+		</div>
+	</div>
+</div>
